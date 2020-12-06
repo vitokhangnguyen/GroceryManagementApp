@@ -1,0 +1,7 @@
+.camera-area {
+    display: flex;
+    margin: 0;
+    border: 3px dashed var(--theme-color);
+    border-radius: 25px;
+    height: 57vh;
+}

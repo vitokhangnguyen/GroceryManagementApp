@@ -1,28 +1,23 @@
 @media screen and (max-width: 768px) {
-    .paragraph-1 {
-        font-size: 18px !important;
-    }
-
-    .right-border-md {
+    .right-bottom-border-md {
         border-right: none !important;
         border-bottom: 1px solid var(--theme-color);
+        padding-bottom: 0.5em;
+        margin-bottom: 1rem;;
     }
 }
 
-.paragraph-1 {
-    text-align: center;
-    color: var(--theme-color);
-    font-size: 24px;
-    font-weight: bold;
+.right-bottom-border-md {
+    border-right: 1px solid var(--theme-color);
 }
 
 .add-inventory-panel {
     padding: 1.5rem 2rem;
     border: 3px dashed var(--theme-color);
     border-radius: 25px;
-    height: 15rem;
 }
 
-.right-border-md {
-    border-right: 1px solid var(--theme-color);
+.add-inventory-btn {
+    color: inherit !important;
+    text-decoration: none !important;
 }

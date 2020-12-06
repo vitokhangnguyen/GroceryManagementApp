@@ -3,7 +3,9 @@ import React from 'react';
 export default class Receipt extends React.Component {
     render() {
         return (
-            <h1>Receipt</h1>
+            <div className="receipt">
+                <p className="paragraph-1">Here’s what we got from your receipt</p>
+            </div>
         );
     }
 }

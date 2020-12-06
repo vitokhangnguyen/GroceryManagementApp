@@ -4,7 +4,9 @@
     margin-bottom: 1rem;
 }
 
-.nav-link.active {
+.nav-link.nav-link-active,
+.nav-link.nav-link-active:hover,
+.nav-link.nav-link-active:focus {
     color: var(--theme-color) !important;
     text-decoration: underline;
 }
