@@ -1,0 +1,28 @@
+@media screen and (max-width: 768px) {
+    .paragraph-1 {
+        font-size: 18px !important;
+    }
+
+    .right-border-md {
+        border-right: none !important;
+        border-bottom: 1px solid var(--theme-color);
+    }
+}
+
+.paragraph-1 {
+    text-align: center;
+    color: var(--theme-color);
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.add-inventory-panel {
+    padding: 1.5rem 2rem;
+    border: 3px dashed var(--theme-color);
+    border-radius: 25px;
+    height: 15rem;
+}
+
+.right-border-md {
+    border-right: 1px solid var(--theme-color);
+}

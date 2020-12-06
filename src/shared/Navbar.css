@@ -1,0 +1,14 @@
+.navbar {
+    background-color: #FFFFFF !important;
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.25);
+    margin-bottom: 1rem;
+}
+
+.nav-link.active {
+    color: var(--theme-color) !important;
+    text-decoration: underline;
+}
+
+.greeting {
+    color: #000 !important;
+}

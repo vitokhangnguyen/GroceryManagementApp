@@ -1,25 +1,38 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { Route, Switch, Redirect } from 'react-router-dom';
+import { Container } from 'react-bootstrap';
+import Navbar from './shared/Navbar';
+import Dashboard from './views/Dashboard';
+import CameraView from './views/CameraView';
+import InventoryList from './views/InventoryList';
+import Receipt from './views/Receipt';
+import 'bootstrap/dist/css/bootstrap.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
-
-export default App;
+export default class App extends React.Component {
+  render() {
+    return (
+      <div id="App">
+        <Navbar />
+        <Container>
+          <Switch>
+            <Route exact path="/">
+              <Redirect to="/dashboard" />
+            </Route>
+            <Route exact path="/dashboard">
+              <Dashboard />
+            </Route>
+            <Route exact path="/inventory">
+              <InventoryList />
+            </Route>
+            <Route exact path="/inventory/add/scanning">
+              <CameraView />
+            </Route>
+            <Route exact path="/inventory/add/receipt/">
+              <Receipt />
+            </Route>
+          </Switch>
+        </Container>
+      </div>
+    );
+  }
+};
