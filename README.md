@@ -1,70 +1,40 @@
-# Getting Started with Create React App
+# Grocery Management App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Setup
 
-## Available Scripts
+1. Clone the code.
 
-In the project directory, you can run:
+1. Install dependencies:
+    ```sh
+    npm i
+    ```
+1. Run development server:
+    ```sh
+    npm start
+    ```
 
-### `npm start`
+1. Navigate to `http://localhost:3000` to open the app.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+> The design for the app can be found [here](https://www.figma.com/file/8yt37mVBsDkTuRdd80nVdS/Design-Charlie?node-id=5%3A0).
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Project Structure
 
-### `npm test`
+All the components are under `src/views` (components that encompass a page) or `src/shared` (child components that are reusable).
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Routing has been set up and can be found in `src/App.js`.
 
-### `npm run build`
+Global styles can be located in `src/index.css`. If you want to use local styling, create a CSS file **with the same name** as the component and import it in the JS file:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+```jsx
+import './Dashboard.css';
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+The project has been equipped with `bootstrap` (4.5) and `react-bootstrap`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Images or icons can be found under `src/assets`. See following example on how to use the assets:
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```jsx
+import CameraIcon from '../assets/icons/ic-camera.png';
+// ...
+<img src={CameraIcon} />
+```
