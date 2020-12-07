@@ -1,0 +1,94 @@
+.page {
+    display: flex;
+    flex-direction: row;
+}
+
+.page .category-sidebar .heading{
+    color: var(--theme-color);
+}
+
+.category-sidebar ul {
+    width: 250px;
+    display: flex;
+    flex-direction: column;
+   
+	border: 1px solid rgba(22, 21, 21, 0.2);
+	line-height: 0;
+    list-style: none;
+    padding-inline-start: 0px;
+}
+
+.category-sidebar ul li {
+    width: 243px;
+    margin-left: 3px ;
+    margin-top: 1px;
+    color: white;
+	display: inline-block;
+	font-size: 16px;
+	cursor: pointer;
+	position: relative;
+	padding: 20px 20px;
+	overflow: hidden;
+	transition: all .3s ease;
+}
+
+.page .inventory-list {
+	margin-top:3rem;
+	margin-left: 2rem;
+	display: flex;
+	flex-flow: row wrap;
+	position: relative;
+	padding-bottom: 5%;
+}
+
+.page .inventory-list .card {
+	padding: 1rem;
+	width: 250px;
+	height: 250px;
+	margin-right: 1rem;
+	margin-bottom: 2rem;
+	background-color: rgba(255, 255, 255, 0.13);
+	border-radius: 7%;
+	cursor: pointer;
+}
+
+.page .card .cardImage {
+	width: 215px;
+	height: 130px;
+}
+
+.page .card .card-img {
+	width: 100%;
+	border-radius: 7%;
+}
+
+.page .card .cardText {
+	float: left;
+	padding-top: 3.5rem;
+}
+
+.page .card .card-text {
+	margin:0;
+}
+
+.page .card .cardQty {
+	display: flex;
+	flex-direction: row;
+	float: right;
+	padding-top: 5rem;
+}
+
+#qty{
+	color:red;
+}
+
+.category-sidebar ul li:hover {
+	background-color: #0f0f0fde !important;
+    color: #050505;
+}
+
+.category-sidebar ul li.active {
+	background-color: black !important;
+  	color:white !important;
+}
+
