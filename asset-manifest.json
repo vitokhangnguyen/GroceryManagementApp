@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "/GroceryManagementApp/static/css/main.be5b3131.chunk.css",
-    "main.js": "/GroceryManagementApp/static/js/main.b920117f.chunk.js",
-    "main.js.map": "/GroceryManagementApp/static/js/main.b920117f.chunk.js.map",
+    "main.css": "/GroceryManagementApp/static/css/main.a06b9d5a.chunk.css",
+    "main.js": "/GroceryManagementApp/static/js/main.af7c35f8.chunk.js",
+    "main.js.map": "/GroceryManagementApp/static/js/main.af7c35f8.chunk.js.map",
     "runtime-main.js": "/GroceryManagementApp/static/js/runtime-main.8a33f2a6.js",
     "runtime-main.js.map": "/GroceryManagementApp/static/js/runtime-main.8a33f2a6.js.map",
     "static/css/2.95f25948.chunk.css": "/GroceryManagementApp/static/css/2.95f25948.chunk.css",
-    "static/js/2.18c6cde7.chunk.js": "/GroceryManagementApp/static/js/2.18c6cde7.chunk.js",
-    "static/js/2.18c6cde7.chunk.js.map": "/GroceryManagementApp/static/js/2.18c6cde7.chunk.js.map",
+    "static/js/2.00622986.chunk.js": "/GroceryManagementApp/static/js/2.00622986.chunk.js",
+    "static/js/2.00622986.chunk.js.map": "/GroceryManagementApp/static/js/2.00622986.chunk.js.map",
     "index.html": "/GroceryManagementApp/index.html",
     "static/css/2.95f25948.chunk.css.map": "/GroceryManagementApp/static/css/2.95f25948.chunk.css.map",
-    "static/css/main.be5b3131.chunk.css.map": "/GroceryManagementApp/static/css/main.be5b3131.chunk.css.map",
-    "static/js/2.18c6cde7.chunk.js.LICENSE.txt": "/GroceryManagementApp/static/js/2.18c6cde7.chunk.js.LICENSE.txt",
+    "static/css/main.a06b9d5a.chunk.css.map": "/GroceryManagementApp/static/css/main.a06b9d5a.chunk.css.map",
+    "static/js/2.00622986.chunk.js.LICENSE.txt": "/GroceryManagementApp/static/js/2.00622986.chunk.js.LICENSE.txt",
+    "static/media/agincourt_walmart.jpg": "/GroceryManagementApp/static/media/agincourt_walmart.7a705481.jpg",
     "static/media/bananas.png": "/GroceryManagementApp/static/media/bananas.d116efd4.png",
     "static/media/bulk_carrot.png": "/GroceryManagementApp/static/media/bulk_carrot.3faa4a44.png",
     "static/media/cheese.png": "/GroceryManagementApp/static/media/cheese.b92dca85.png",
@@ -23,8 +24,10 @@
     "static/media/ic-logo-lg.db763a18.png": "/GroceryManagementApp/static/media/ic-logo-lg.db763a18.png",
     "static/media/ic-take-photo.f20784c5.png": "/GroceryManagementApp/static/media/ic-take-photo.f20784c5.png",
     "static/media/ketchup.png": "/GroceryManagementApp/static/media/ketchup.1f7e79d5.png",
+    "static/media/listo_nofrills.jpg": "/GroceryManagementApp/static/media/listo_nofrills.9126cb7f.jpg",
     "static/media/milk.png": "/GroceryManagementApp/static/media/milk.47849d48.png",
     "static/media/mustard.png": "/GroceryManagementApp/static/media/mustard.04f368e0.png",
+    "static/media/nofrills.jpg": "/GroceryManagementApp/static/media/nofrills.dce19d74.jpg",
     "static/media/oranges.png": "/GroceryManagementApp/static/media/oranges.37647c8b.png",
     "static/media/paprika.png": "/GroceryManagementApp/static/media/paprika.f7125ee1.png",
     "static/media/pepper.png": "/GroceryManagementApp/static/media/pepper.3153fe8f.png",
@@ -32,13 +35,15 @@
     "static/media/steak.png": "/GroceryManagementApp/static/media/steak.1a5502e4.png",
     "static/media/tuna.png": "/GroceryManagementApp/static/media/tuna.9a773af9.png",
     "static/media/turmeric.png": "/GroceryManagementApp/static/media/turmeric.89252cb7.png",
+    "static/media/vicparksquare_foodbasics.jpg": "/GroceryManagementApp/static/media/vicparksquare_foodbasics.34324899.jpg",
+    "static/media/walmart.png": "/GroceryManagementApp/static/media/walmart.36081bcb.png",
     "static/media/yukon_gold_potato.png": "/GroceryManagementApp/static/media/yukon_gold_potato.c0f2487b.png"
   },
   "entrypoints": [
     "static/js/runtime-main.8a33f2a6.js",
     "static/css/2.95f25948.chunk.css",
-    "static/js/2.18c6cde7.chunk.js",
-    "static/css/main.be5b3131.chunk.css",
-    "static/js/main.b920117f.chunk.js"
+    "static/js/2.00622986.chunk.js",
+    "static/css/main.a06b9d5a.chunk.css",
+    "static/js/main.af7c35f8.chunk.js"
   ]
 }
