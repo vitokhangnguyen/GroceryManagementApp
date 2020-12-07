@@ -1,4 +1,4 @@
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 767px) {
     .right-bottom-border-md {
         border-right: none !important;
         border-bottom: 1px solid var(--theme-color);
