@@ -6,7 +6,7 @@
 
 body {
   margin: 0;
-  background-color: #F9F8F7;
+  background-color: #F9F8F7 !important;
   color: #3D3D3D !important;
   font-family: 'Montserrat', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
@@ -16,15 +16,16 @@ body {
   font-weight: 600 !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 @media screen and (max-width: 768px) {
   .paragraph-1 {
       font-size: 18px !important;
   }
+}
+
+main {
+  max-width: 1284px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .paragraph-1 {

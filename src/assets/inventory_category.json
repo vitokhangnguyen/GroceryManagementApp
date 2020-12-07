@@ -1,0 +1,169 @@
+[
+    {
+        "name": "All",
+        "color": "var(--theme-color)",
+        "backgroundColor": "white",
+        "items": []
+    },
+    {
+        "name": "Meat",
+        "color": "white",
+        "backgroundColor": "var(--theme-color)",
+        "items": [
+            {
+                "name": "Steak",
+                "imageFile": "steak.png",
+                "location": "Listo's NoFrill",
+                "qty": 1
+            },
+            {
+                "name": "Chicken",
+                "imageFile": "chicken.png",
+                "location": "Listo's NoFrills",
+                "qty": 2
+            }
+        ]
+    },
+    {
+        "name": "Vegetable",
+        "color": "white",
+        "backgroundColor": "#77B255",
+        "items": [
+            {
+                "name": "Bulk Carrot",
+                "imageFile": "bulk_carrot.png",
+                "location": "Listo's NoFrill",
+                "qty": 1
+            },
+            {
+                "name": "Yukon Gold Potato",
+                "imageFile": "yukon_gold_potato.png",
+                "location": "Listo's NoFrills",
+                "qty": 4
+            },
+            {
+                "name": "Cremini Whole Mushroom",
+                "imageFile": "cremini_whole_mushroom.png",
+                "location": "President's Choice",
+                "qty": "2lb"
+            }
+        ]
+    },
+
+    {
+        "name": "Fruit",
+        "color": "white",
+        "backgroundColor": "#FFA500",
+        "items": [
+            {
+                "name": "Bananas",
+                "imageFile": "bananas.png",
+                "location": "Listo's NoFrill",
+                "qty": 4
+            },
+            {
+                "name": "Oranges",
+                "imageFile": "oranges.png",
+                "location": "Listo's NoFrills",
+                "qty": 6
+            }
+        ]
+    },
+    {
+        "name": "Dairy",
+        "color": "#808080",
+        "backgroundColor": "#FCF0D7",
+        "items": [
+            {
+                "name": "Milk",
+                "imageFile": "milk.png",
+                "location": "Listo's NoFrill",
+                "qty": 1
+            },
+            {
+                "name": "Cheese",
+                "imageFile": "cheese.png",
+                "location": "Listo's NoFrills",
+                "qty": 3
+            }
+        ]
+    },
+    {
+        "name": "Can Food",
+        "color": "white",
+        "backgroundColor": "#989898",
+        "items": [
+            {
+                "name": "Corn",
+                "imageFile": "corn.png",
+                "location": "Listo's NoFrill",
+                "qty": 1
+            },
+            {
+                "name": "Tuna",
+                "imageFile": "tuna.png",
+                "location": "Listo's NoFrills",
+                "qty": 4
+            }
+        ]
+    },
+    
+    {
+        "name": "Spice",
+        "color": "white",
+        "backgroundColor": "#680000",
+        "items": [
+            {
+                "name": "Turmeric",
+                "imageFile": "turmeric.png",
+                "location": "Listo's NoFrill",
+                "qty": 1
+            },
+            {
+                "name": "Paprika",
+                "imageFile": "paprika.png",
+                "location": "Listo's NoFrills",
+                "qty": 2
+            }
+        ]
+    },
+    {
+        "name": "Condiment",
+        "color": "white",
+        "backgroundColor": "#D8BE07",
+        "items": [
+            {
+                "name": "Ketchup",
+                "imageFile": "ketchup.png",
+                "location": "Listo's NoFrill",
+                "qty": 1
+            },
+            {
+                "name": "Mustard",
+                "imageFile": "mustard.png",
+                "location": "Listo's NoFrills",
+                "qty": 2
+            }
+        ]
+    },
+    {
+        "name": "Beverage",
+        "color": "white",
+        "backgroundColor": "#74C2FD",
+        "items": [
+            {
+                "name": "Coke",
+                "imageFile": "coke.png",
+                "location": "Listo's NoFrill",
+                "qty": 1
+            },
+            {
+                "name": "Sprite",
+                "imageFile": "sprite.png",
+                "location": "Listo's NoFrills",
+                "qty": 3
+            }
+        ]
+    }
+
+]
