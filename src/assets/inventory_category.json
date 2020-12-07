@@ -1,14 +1,14 @@
 [
     {
-        "category": "All",
-        "color": "red",
+        "name": "All",
+        "color": "var(--theme-color)",
         "backgroundColor": "white",
         "items": []
     },
     {
-        "category": "Meat",
+        "name": "Meat",
         "color": "white",
-        "backgroundColor": "red",
+        "backgroundColor": "var(--theme-color)",
         "items": [
             {
                 "name": "Steak",
@@ -25,9 +25,9 @@
         ]
     },
     {
-        "category": "vegetable",
+        "name": "Vegetable",
         "color": "white",
-        "backgroundColor": "green",
+        "backgroundColor": "#77B255",
         "items": [
             {
                 "name": "Bulk Carrot",
@@ -42,7 +42,7 @@
                 "qty": 4
             },
             {
-                "name": "Whole Mushroom",
+                "name": "Cremini Whole Mushroom",
                 "imageFile": "cremini_whole_mushroom.png",
                 "location": "President's Choice",
                 "qty": "2lb"
@@ -51,9 +51,9 @@
     },
 
     {
-        "category": "Fruits",
+        "name": "Fruit",
         "color": "white",
-        "backgroundColor": "orange",
+        "backgroundColor": "#FFA500",
         "items": [
             {
                 "name": "Bananas",
@@ -70,9 +70,9 @@
         ]
     },
     {
-        "category": "Dairy",
-        "color": "black",
-        "backgroundColor": "#FFEDD0",
+        "name": "Dairy",
+        "color": "#808080",
+        "backgroundColor": "#FCF0D7",
         "items": [
             {
                 "name": "Milk",
@@ -89,9 +89,9 @@
         ]
     },
     {
-        "category": "Can Food",
+        "name": "Can Food",
         "color": "white",
-        "backgroundColor": "grey",
+        "backgroundColor": "#989898",
         "items": [
             {
                 "name": "Corn",
@@ -109,9 +109,9 @@
     },
     
     {
-        "category": "Spices",
+        "name": "Spice",
         "color": "white",
-        "backgroundColor": "#8B0000",
+        "backgroundColor": "#680000",
         "items": [
             {
                 "name": "Turmeric",
@@ -128,9 +128,9 @@
         ]
     },
     {
-        "category": "Condiments",
+        "name": "Condiment",
         "color": "white",
-        "backgroundColor": "#CCCC00",
+        "backgroundColor": "#D8BE07",
         "items": [
             {
                 "name": "Ketchup",
@@ -147,9 +147,9 @@
         ]
     },
     {
-        "category": "Beverages",
+        "name": "Beverage",
         "color": "white",
-        "backgroundColor": "teal",
+        "backgroundColor": "#74C2FD",
         "items": [
             {
                 "name": "Coke",

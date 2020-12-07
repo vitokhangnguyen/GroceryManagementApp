@@ -1,94 +1,166 @@
-.page {
-    display: flex;
-    flex-direction: row;
+@media screen and (min-width: 1284px) {
+	.sidebar-control {
+		display: none !important;
+	}
 }
 
-.page .category-sidebar .heading{
-    color: var(--theme-color);
+.page-header {
+	margin-bottom: 0.5rem;
+	padding-left: 1.5rem;
+}
+
+.page-header h2 {
+	color: var(--theme-color);
+	font-weight: bolder;
+	text-align: center;
+	display: inline-block;
+}
+
+.page-body {
+	display: flex;
+	justify-content: flex-start;
+	flex-flow: row nowrap;
+	overflow: hidden;
+}
+
+.category-sidebar {
+	min-width: 200px;
+	height: 90vh;
+	box-shadow: 2px 0 3px 0 rgba(0, 0, 0, 0.25);
+	border-left: 1px solid #DDD;
+	background-color: #FFF;
+	margin-right: 2.5rem;
+	position: relative;
+	transition: all 0.5s ease;
+}
+
+.category-sidebar.hidden {
+	margin-left: -200px;
+	box-shadow: none;
+}
+
+.category-sidebar.hidden li.active {
+	transform: none;
+}
+
+.category-sidebar.hidden .arrow-right {
+	display: none;
 }
 
 .category-sidebar ul {
-    width: 250px;
+	width: 100%;
     display: flex;
     flex-direction: column;
    
-	border: 1px solid rgba(22, 21, 21, 0.2);
 	line-height: 0;
     list-style: none;
     padding-inline-start: 0px;
 }
 
 .category-sidebar ul li {
-    width: 243px;
-    margin-left: 3px ;
+    width: 100%;
     margin-top: 1px;
-    color: white;
-	display: inline-block;
-	font-size: 16px;
 	cursor: pointer;
+	padding: 20px 1rem;
+	transition: all .3s ease-out;
 	position: relative;
-	padding: 20px 20px;
-	overflow: hidden;
-	transition: all .3s ease;
 }
 
-.page .inventory-list {
-	margin-top:3rem;
-	margin-left: 2rem;
+.category-sidebar ul li:hover,
+.category-sidebar ul li.active {
+	transform: scale(1.05);
+	border-radius: 0.1cm;
+}
+
+.category-sidebar ul li.active .arrow-right {
+	height: 45px;
+	width: 45px;
+	position: absolute;
+	right: -16px;
+	bottom: -3px;
+	transform: rotate(45deg);
+}
+
+.sidebar-control {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: fixed;
+	width: 50px;
+	height: 50px;
+	bottom: 0.5em;
+	left: 0.5em;
+	background-color: var(--theme-color);
+	border-radius: 50%;
+	opacity: 0.75;
+	cursor: pointer;
+	z-index: 9999;
+}
+
+.sidebar-control.hidden {
+	transform: rotate(180deg);
+}
+
+.sidebar-control img {
+	width: 25px;
+	height: 25px;
+}
+
+.inventory-list {
 	display: flex;
 	flex-flow: row wrap;
-	position: relative;
-	padding-bottom: 5%;
+	justify-content: space-around;
+	align-content: flex-start;
 }
 
-.page .inventory-list .card {
+.inventory-list .card {
+	display: inline-flex;
 	padding: 1rem;
-	width: 250px;
+	width: 200px;
 	height: 250px;
-	margin-right: 1rem;
+	margin-right: 2rem;
 	margin-bottom: 2rem;
-	background-color: rgba(255, 255, 255, 0.13);
-	border-radius: 7%;
 	cursor: pointer;
+	position: relative;
+	box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.25);
 }
 
-.page .card .cardImage {
-	width: 215px;
-	height: 130px;
+.card .cardImage {
+	width: 100%;
+	height: 75%;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	margin-bottom: 3px;
 }
 
-.page .card .card-img {
+.card .cardImage img {
 	width: 100%;
 	border-radius: 7%;
 }
 
-.page .card .cardText {
-	float: left;
-	padding-top: 3.5rem;
+.card .card-text {
+	margin: 0;
+	width: 100%;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+	overflow: hidden;
 }
 
-.page .card .card-text {
-	margin:0;
+.card .card-text.light {
+	font-size: 12px;
+	font-weight: normal;
 }
 
-.page .card .cardQty {
-	display: flex;
-	flex-direction: row;
-	float: right;
-	padding-top: 5rem;
+.card .cardQty {
+	display: inline-block;
+	width: auto;
+	position: absolute;
+	bottom: 0.35rem;
+	right: 0.75rem;
 }
 
-#qty{
-	color:red;
-}
-
-.category-sidebar ul li:hover {
-	background-color: #0f0f0fde !important;
-    color: #050505;
-}
-
-.category-sidebar ul li.active {
-	background-color: black !important;
-  	color:white !important;
+.qty {
+	color: var(--theme-color);
 }
 

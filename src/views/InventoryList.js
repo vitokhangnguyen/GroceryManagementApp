@@ -1,36 +1,43 @@
 import React, { Component } from 'react';
 import Card from 'react-bootstrap/Card'
+import Categories from '../assets/inventory_category.json';
 import './InventoryList.css';
-import Inventory from '../assets/inventory.json';
+import ShowHideIcon from '../assets/icons/ic-hide.png';
 
 class InventoryPage extends Component {
     constructor(props) {
         super(props);
         this.changeCategory = this.changeCategory.bind(this);
+        this.toggleSidebar = this.toggleSidebar.bind(this);
         this.state = { 
-          active: 0
+          currentCategory: Categories[0],
+          hideSidebar: false,
         };
     }
 
-  changeCategory(index) {
-    this.setState(prevState => ({ active: index }));
+  changeCategory(newCategory) {
+    this.setState(prevState => ({ currentCategory: newCategory }));
   }
 
-  get currentCategory() {
-    return Inventory.find((invItem, index) => index === this.state.active);
+  toggleSidebar() {
+    this.setState(prevState => ({ hideSidebar: !prevState.hideSidebar }))
   }
 
   render() {
       return (
           <div className="page">
-            <div className="category-sidebar">
-              <div className="heading">
-                  <h2>Inventory </h2>
-              </div>
-              <CategoriesPanel onCategoryChange={this.changeCategory} currentCategory={this.currentCategory} />
+            <div className="page-header">
+                <h2>Inventory</h2>
             </div>
-
-            <InventoryList category={this.currentCategory} />
+            <div className="page-body">
+              <CategoriesPanel
+                onCategoryChange={this.changeCategory}
+                currentCategory={this.state.currentCategory}
+                onToggle={this.toggleSidebar}
+                hide={this.state.hideSidebar}
+              />
+              <InventoryList category={this.state.currentCategory} />
+            </div>
           </div> 
       );
   }
@@ -38,60 +45,71 @@ class InventoryPage extends Component {
 
 const CategoriesPanel = props => {
   return (
-    <ul>
-      {
-        Inventory.map((category, index) =>
-          <CategoryItem key={index} active={category.category === props.currentCategory.category} onCategoryItemSelect={() => props.onCategoryChange(index)} category={category} />)
-      }
-    </ul>
+    <div className={'category-sidebar ' + (props.hide ? "hidden" : "")}>
+      <ul>
+        {
+          Categories.map((category, index) =>
+            <CategoryItem
+              key={index}
+              isActive={category.name === props.currentCategory.name}
+              onCategoryItemSelect={() => props.onCategoryChange(category)}
+              category={category}
+            />
+          )
+        }
+      </ul>
+      <div
+        onClick={props.onToggle}
+        className={"sidebar-control " + (props.hide ? "hidden" : "")}
+      >
+        <img alt="show-hide-sidebar" src={ShowHideIcon} />
+      </div>
+    </div>
   );
 }
 
 const CategoryItem = props => {
-  let category = props.category;
+  let { name, backgroundColor, color } = props.category;
   return (
     <li
-      style={{ backgroundColor: category.backgroundColor, color: category.color}}
+      style={{ backgroundColor, color}}
       onClick={props.onCategoryItemSelect}
-      className={ (props.active ? 'active' : '') + ' category-item'}
+      className={ (props.isActive ? 'active' : '') + ' category-item'}
     >
-      {category.category}
+      <span className="category-name">{name}</span>
+      <div className="arrow-right" style={{	background: `linear-gradient(45deg, transparent 50%, ${backgroundColor} 50%)` }}></div>
     </li>
   );
 }
 
 const InventoryList = props => {
-  let category = props.category;
+  let { name, items } = props.category;
+  if (name === 'All') {
+    items = Categories.reduce((prev, cur) => prev.concat(cur.items), []);
+  }
   return (
     <div className="inventory-list">
-      {
-      category.category === 'All' ?
-        Inventory.reduce((prev, cur) => prev.concat(cur.items), [])
-          .map((item, index) => <InventoryItem key={index} item={item} />) :
-        category.items.map((item, index) => <InventoryItem key={index} item={item} />)
-      }
+      { items.map((item, index) => <InventoryItem key={index} item={item} />) }
     </div>
   );
 }
 
 const InventoryItem = props => {
-  let imgUrl = require(`../assets/images/inventory/${props.item.imageFile}`).default;
+  let { imageFile, name, location, qty } = props.item;
+  let imageUrl = require(`../assets/images/inventory/${imageFile}`).default;
   return (
     <Card >
       <div className="cardImage">
-        <Card.Img src={imgUrl} alt={props.item.imageFile} />
+        <Card.Img src={imageUrl} alt={imageFile} />
       </div>
-      <div className="cardBottom">
-        <div className="cardText">
-          <Card.Text >{props.item.name}</Card.Text>
-          <Card.Text>{props.item.location}</Card.Text>
-        </div>
-        <div className="cardQty">
-          <Card.Text id="qty">Qty: &nbsp;</Card.Text>
-          <Card.Text >{props.item.qty}</Card.Text>
-        </div>
+      <div className="cardInfo">
+        <Card.Text>{ name }</Card.Text>
+        <Card.Text className="light">{ location }</Card.Text>
+        <Card.Text className="cardQty">
+          <span className="qty">Qty:</span>&nbsp;
+          { qty }
+        </Card.Text>
       </div>
-   
     </Card>
   );
 }
