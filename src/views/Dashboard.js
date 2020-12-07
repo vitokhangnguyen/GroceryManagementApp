@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import CameraIcon from '../assets/icons/ic-camera.png';
 import KeyboardIcon from '../assets/icons/ic-keyboard.png';
-import dashnotif from '../assets/images/uielements/dashboard-pic.svg';
+import DashNotif from '../assets/images/uielements/dashboard-pic.svg';
 
 export default class Dashboard extends React.Component {
     render() {
@@ -31,7 +31,7 @@ export default class Dashboard extends React.Component {
                     </div>
                 </div>
                 <div className="notification-panel">
-                    <img alt="ui-element" src={dashnotif} className="w-100 my-4"/>
+                    <img alt="ui-element" src={DashNotif} className="w-100 my-4"/>
                 </div>
             </div>
         );
