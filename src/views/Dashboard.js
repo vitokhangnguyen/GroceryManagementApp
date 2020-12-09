@@ -3,9 +3,18 @@ import { Link } from 'react-router-dom';
 import './Dashboard.css';
 import CameraIcon from '../assets/icons/ic-camera.png';
 import KeyboardIcon from '../assets/icons/ic-keyboard.png';
+import NotifTitNum from '../assets/images/uielements/notif-tit-num.svg';
 import DashNotif from '../assets/images/uielements/dashboard-pic.svg';
 
 export default class Dashboard extends React.Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            notifvisible: true
+        };
+    }
+
     render() {
         return (
             <div className="dashboard px-4">
@@ -31,7 +40,17 @@ export default class Dashboard extends React.Component {
                     </div>
                 </div>
                 <div className="notification-panel">
-                    <img alt="ui-element" src={DashNotif} className="w-100 my-4"/>
+                    <div className="notification-header mt-4">
+                        <div className="notification-title">
+                            <img alt="ui-header" src={NotifTitNum} />
+                            <p className="mx-1 my-0">Notifications</p>
+                        </div>
+                        <button className="btn" onClick={() => this.setState({ notifvisible: false })}>Clear all</button>
+                    </div>
+                    {
+                        this.state.notifvisible &&
+                        <img alt="ui-element" src={DashNotif} className="w-100 my-2" />
+                    }
                 </div>
             </div>
         );

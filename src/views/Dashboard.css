@@ -21,3 +21,27 @@
     color: inherit !important;
     text-decoration: none !important;
 }
+
+.notification-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.notification-title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.notification-title > p {
+    color: #BF202F;
+    line-height: 1.5rem;
+    font-size: 1.3rem;
+}
+
+.notification-title > img {
+    height: 1.5rem;
+}
+
