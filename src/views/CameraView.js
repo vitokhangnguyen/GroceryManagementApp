@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import Camera from 'react-html5-camera-photo';
 import './CameraView.css';
 import TakePhotoIcon from '../assets/icons/ic-take-photo.png';
+import CameraDir from '../assets/images/uielements/camera-dir.svg';
 // import ArrowUpIcon from '../assets/icons/ic-arrow-up.png';
 
 class CameraView extends React.Component {
