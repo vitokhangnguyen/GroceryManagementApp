@@ -42,7 +42,10 @@ export default class Dashboard extends React.Component {
                 <div className="notification-panel">
                     <div className="notification-header mt-4">
                         <div className="notification-title">
-                            <img alt="ui-header" src={NotifTitNum} />
+                            {
+                                this.state.notifvisible &&
+                                <img alt="ui-header" src={NotifTitNum} />
+                            }
                             <p className="mx-1 my-0">Notifications</p>
                         </div>
                         <button className="btn" onClick={() => this.setState({ notifvisible: false })}>Clear all</button>
