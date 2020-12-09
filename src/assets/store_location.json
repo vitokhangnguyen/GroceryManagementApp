@@ -1,0 +1,41 @@
+[
+    {
+        "title": "NoFrills",
+        "name": "Listo's NoFrills",
+        "description": "Grocery Store",
+        "imageFile": "listo_nofrills.jpg",
+        "logoFile": "nofrills.jpg",
+        "address1": "3555 Don Mills Rd",
+        "address2": "North York, ON M2H 3N3",
+        "position": {
+            "lat": 43.79433864972545, 
+            "lng": -79.35424308220558
+        }
+    },
+    {
+        "title": "Walmart",
+        "name": "Agincourt Walmart Supercentre",
+        "description": "Department Store",
+        "imageFile": "agincourt_walmart.jpg",
+        "logoFile": "walmart.png",
+        "address1": "3850 Sheppard Ave E",
+        "address2": "Toronto, ON M1T 3L3",
+        "position": {
+            "lat": 43.7842529624842, 
+            "lng": -79.29217205470617
+        }
+    },
+    {
+        "title": "Food Basics",
+        "name": "Food Basics",
+        "description": "Discount Store",
+        "imageFile": "vicparksquare_foodbasics.jpg",
+        "logoFile": "foodbasics.jpg",
+        "address1": "2452 Sheppard Ave E",
+        "address2": "Toronto, ON M2J 4W6",
+        "position": {
+            "lat": 43.775874228923826, 
+            "lng": -79.32548059006359
+        }
+    }
+]

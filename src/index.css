@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
 
 :root {
+  --button-panel-height: 3rem;
   --theme-color: #BF202F;
+  --theme-color-dark: #8F181A;
 }
 
 body {
@@ -16,38 +18,9 @@ body {
   font-weight: 600 !important;
 }
 
-@media screen and (max-width: 768px) {
-  .paragraph-1 {
-      font-size: 18px !important;
-  }
-}
-
 main {
   max-width: 1284px;
   margin-left: auto;
   margin-right: auto;
-}
-
-.paragraph-1 {
-  text-align: center;
-  color: var(--theme-color);
-  font-size: 24px;
-  font-weight: bold;
-}
-
-.button-panel {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 3rem;
-}
-
-.back-button {
-  border: 2px solid #C9C9C9;
-  background-color: #EAEAEA;
-  color: #898989;
-  font-size: 20px;
-  font-weight: bolder;
-  height: 100%;
+  padding: 0 1rem;
 }
