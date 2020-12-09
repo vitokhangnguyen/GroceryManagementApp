@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/GroceryManagementApp/static/css/main.a06b9d5a.chunk.css",
-    "main.js": "/GroceryManagementApp/static/js/main.af7c35f8.chunk.js",
-    "main.js.map": "/GroceryManagementApp/static/js/main.af7c35f8.chunk.js.map",
+    "main.css": "/GroceryManagementApp/static/css/main.47e92568.chunk.css",
+    "main.js": "/GroceryManagementApp/static/js/main.63415563.chunk.js",
+    "main.js.map": "/GroceryManagementApp/static/js/main.63415563.chunk.js.map",
     "runtime-main.js": "/GroceryManagementApp/static/js/runtime-main.8a33f2a6.js",
     "runtime-main.js.map": "/GroceryManagementApp/static/js/runtime-main.8a33f2a6.js.map",
-    "static/css/2.95f25948.chunk.css": "/GroceryManagementApp/static/css/2.95f25948.chunk.css",
-    "static/js/2.00622986.chunk.js": "/GroceryManagementApp/static/js/2.00622986.chunk.js",
-    "static/js/2.00622986.chunk.js.map": "/GroceryManagementApp/static/js/2.00622986.chunk.js.map",
+    "static/css/2.9e656a63.chunk.css": "/GroceryManagementApp/static/css/2.9e656a63.chunk.css",
+    "static/js/2.223e47f1.chunk.js": "/GroceryManagementApp/static/js/2.223e47f1.chunk.js",
+    "static/js/2.223e47f1.chunk.js.map": "/GroceryManagementApp/static/js/2.223e47f1.chunk.js.map",
     "index.html": "/GroceryManagementApp/index.html",
-    "static/css/2.95f25948.chunk.css.map": "/GroceryManagementApp/static/css/2.95f25948.chunk.css.map",
-    "static/css/main.a06b9d5a.chunk.css.map": "/GroceryManagementApp/static/css/main.a06b9d5a.chunk.css.map",
-    "static/js/2.00622986.chunk.js.LICENSE.txt": "/GroceryManagementApp/static/js/2.00622986.chunk.js.LICENSE.txt",
+    "static/css/2.9e656a63.chunk.css.map": "/GroceryManagementApp/static/css/2.9e656a63.chunk.css.map",
+    "static/css/main.47e92568.chunk.css.map": "/GroceryManagementApp/static/css/main.47e92568.chunk.css.map",
+    "static/js/2.223e47f1.chunk.js.LICENSE.txt": "/GroceryManagementApp/static/js/2.223e47f1.chunk.js.LICENSE.txt",
     "static/media/agincourt_walmart.jpg": "/GroceryManagementApp/static/media/agincourt_walmart.7a705481.jpg",
     "static/media/bananas.png": "/GroceryManagementApp/static/media/bananas.d116efd4.png",
     "static/media/bulk_carrot.png": "/GroceryManagementApp/static/media/bulk_carrot.3faa4a44.png",
@@ -20,6 +20,7 @@
     "static/media/coke.png": "/GroceryManagementApp/static/media/coke.6cd22121.png",
     "static/media/corn.png": "/GroceryManagementApp/static/media/corn.76ed9459.png",
     "static/media/cremini_whole_mushroom.png": "/GroceryManagementApp/static/media/cremini_whole_mushroom.c416eb93.png",
+    "static/media/dashboard-pic.d5710b83.svg": "/GroceryManagementApp/static/media/dashboard-pic.d5710b83.svg",
     "static/media/ic-hide.3c87812f.png": "/GroceryManagementApp/static/media/ic-hide.3c87812f.png",
     "static/media/ic-logo-lg.db763a18.png": "/GroceryManagementApp/static/media/ic-logo-lg.db763a18.png",
     "static/media/ic-take-photo.f20784c5.png": "/GroceryManagementApp/static/media/ic-take-photo.f20784c5.png",
@@ -28,6 +29,7 @@
     "static/media/milk.png": "/GroceryManagementApp/static/media/milk.47849d48.png",
     "static/media/mustard.png": "/GroceryManagementApp/static/media/mustard.04f368e0.png",
     "static/media/nofrills.jpg": "/GroceryManagementApp/static/media/nofrills.dce19d74.jpg",
+    "static/media/noname.png": "/GroceryManagementApp/static/media/noname.52cf9058.png",
     "static/media/oranges.png": "/GroceryManagementApp/static/media/oranges.37647c8b.png",
     "static/media/paprika.png": "/GroceryManagementApp/static/media/paprika.f7125ee1.png",
     "static/media/pepper.png": "/GroceryManagementApp/static/media/pepper.3153fe8f.png",
@@ -41,9 +43,9 @@
   },
   "entrypoints": [
     "static/js/runtime-main.8a33f2a6.js",
-    "static/css/2.95f25948.chunk.css",
-    "static/js/2.00622986.chunk.js",
-    "static/css/main.a06b9d5a.chunk.css",
-    "static/js/main.af7c35f8.chunk.js"
+    "static/css/2.9e656a63.chunk.css",
+    "static/js/2.223e47f1.chunk.js",
+    "static/css/main.47e92568.chunk.css",
+    "static/js/main.63415563.chunk.js"
   ]
 }
