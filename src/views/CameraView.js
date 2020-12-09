@@ -23,7 +23,7 @@ class CameraView extends React.Component {
         const cameraResolution = {width: cameraWidth, height: cameraHeight };
         const cameraMsg = 'Please give us camera permission and refresh for scanning';
         return (
-            <div className="camera-view">
+            <div className="camera-view px-4">
                 <p className="paragraph-1">Place your receipt vertically centered on a flat surface</p>
                 <div ref={this.CameraArea} className="camera-area">
                     { this.state.cameraReady ?
