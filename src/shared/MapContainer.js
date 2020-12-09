@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { Map, Marker, InfoWindow, GoogleApiWrapper } from 'google-maps-react';
-import './SelectLocationMap.css';
+import './MapContainer.css';
 import PlaceholderImage from '../assets/images/placeholder-image.png';
 
-class GMA_Map extends React.Component {
+class MapContainer extends React.Component {
     state = {
         showingInfoWindow: false,
         activeMarker: {},
@@ -41,7 +41,7 @@ class GMA_Map extends React.Component {
                     alt={ this.state.selectedLocation?.imageFile ?? 'loading-image'}
                 />
                 <button
-                    className="btn btn-sm btn-primary float-right"
+                    className="btn btn-sm btn-default float-right"
                     onClick={e => this.props.onLocationSelect(this.state.selectedLocation)}
                 >
                     Select
@@ -96,4 +96,4 @@ class GMA_Map extends React.Component {
 
 export default GoogleApiWrapper({
     apiKey: 'AIzaSyDu43X7smYwhfHVqGxLEqqoeQHFT6OZFYA'
-})(GMA_Map);
+})(MapContainer);

@@ -25,11 +25,11 @@ class InventoryPage extends Component {
 
   render() {
       return (
-          <div className="page">
-            <div className="page-header">
+          <div className="inventory-page">
+            <div className="inventory-page-header">
                 <h2>Inventory</h2>
             </div>
-            <div className="page-body">
+            <div className="inventory-page-body">
               <CategoriesPanel
                 onCategoryChange={this.changeCategory}
                 currentCategory={this.state.currentCategory}
