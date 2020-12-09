@@ -3,6 +3,7 @@ import { Link, withRouter } from 'react-router-dom';
 import Camera from 'react-html5-camera-photo';
 import './CameraView.css';
 import TakePhotoIcon from '../assets/icons/ic-take-photo.png';
+import CameraDir from '../assets/images/uielements/camera-dir.svg';
 // import ArrowUpIcon from '../assets/icons/ic-arrow-up.png';
 
 class CameraView extends React.Component {
@@ -36,6 +37,7 @@ class CameraView extends React.Component {
                     <Link to="/inventory/add/receipt/">
                         <img className="mb-2" alt="scan-receipt-button" src={TakePhotoIcon} />
                     </Link>
+                    <img alt="ui-element" src={CameraDir} className="w-100 mx-auto py-3"/>
                     {/* <img className="mb-2" alt="point-to-scan-button" src={ArrowUpIcon} width="40" />
                     <p className="text-center">Take an image of your receipt to help us fill in the items for you</p> */}
                 </div>
