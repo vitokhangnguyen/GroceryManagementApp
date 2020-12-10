@@ -8,31 +8,64 @@ import Categories from '../assets/inventory_category.json';
 import CustomCategories from '../assets/inventory_category_custom.json';
 import './InventoryList.css';
 import ShowHideIcon from '../assets/icons/ic-hide.png';
+import SearchIcon from '../assets/icons/ic-search.webp';
 
 class InventoryPage extends Component {
     constructor(props) {
         super(props);
-        this.changeCategory = this.changeCategory.bind(this);
-        this.toggleSidebar = this.toggleSidebar.bind(this);
         this.state = { 
           currentCategory: Categories[0],
           hideSidebar: false,
+          searchPattern: '',
+          sortPattern: 'alphabetic',
         };
     }
 
-  changeCategory(newCategory) {
+  changeCategory = newCategory => {
     this.setState(prevState => ({ currentCategory: newCategory }));
   }
 
-  toggleSidebar() {
+  toggleSidebar = () => {
     this.setState(prevState => ({ hideSidebar: !prevState.hideSidebar }))
+  }
+
+  onInputChange = e => {
+    this.setState({ [e.target.name]: e.target.value });
   }
 
   render() {
       return (
           <div className="inventory-page">
             <div className="inventory-page-header">
-                <h2>Inventory</h2>
+                <div className="inventory-page-subheader-1 mb-2">
+                  <h2>Inventory</h2>
+                  <div className="input-group w-auto">
+                    <input
+                      placeholder="Search"
+                      className="form-control py-2 border-right-0 border"
+                      name="searchPattern"
+                      value={this.state.searchPattern}
+                      onChange={this.onInputChange}
+                    />
+                    <span className="input-group-append">
+                      <button className="btn btn-link border-left-0 border" tabIndex="-1" style={{ backgroundColor: 'white' }} type="button">
+                          <img src={SearchIcon} alt="search-inventory" width="22px" />
+                      </button>
+                    </span>
+                  </div>
+                </div>
+                <div className="inventory-page-subheader-2 mr-4 mb-2">
+                  <span className="mr-2">Sort&nbsp;by:</span>
+                  <select
+                    className="form-control w-auto"
+                    name="sortPattern"
+                    value={this.state.sortPattern}
+                    onChange={this.onInputChange}
+                  >
+                    <option value="alphabetic">A-Z</option>
+                    <option value="counter-alphabetic">Z-A</option>
+                  </select>
+                </div>
             </div>
             <div className="inventory-page-body">
               <CategoriesPanel
@@ -41,7 +74,7 @@ class InventoryPage extends Component {
                 onToggle={this.toggleSidebar}
                 hide={this.state.hideSidebar}
               />
-              <InventoryList category={this.state.currentCategory} />
+              <InventoryList category={this.state.currentCategory} search={this.state.searchPattern} sort={this.state.sortPattern} />
             </div>
           </div> 
       );
@@ -88,13 +121,28 @@ const CategoryItem = props => {
 }
 
 const InventoryList = props => {
-  let { name, items } = props.category;
-  if (name === 'All') {
+  let { search, sort, category } = props;
+  let items = category.items;
+  if (category.name === 'All') {
     items = Categories.reduce((prev, cur) => prev.concat(cur.items), []);
   }
+  if (['alphabetic', 'counter-alphabetic'].includes(sort)) {
+    items.sort(function (item1, item2) {
+      var name1 = item1.name.toUpperCase();
+      var name2 = item2.name.toUpperCase();
+      return sort === 'alphabetic' ? name1.localeCompare(name2) : name2.localeCompare(name1);
+    });
+  }
+  let searchPattern = search.trim().toLowerCase();
   return (
     <div className="inventory-list">
-      { items.map((item, index) => <InventoryItem key={index} item={{ ...item, category: name }} />) }
+      { 
+        items.map((item, index) =>
+          item.name.toLowerCase().includes(searchPattern) || 
+          item.location.toLowerCase().includes(searchPattern) ?
+            <InventoryItem key={index} item={{ ...item, category: category.name }} /> : null
+        )
+      }
     </div>
   );
 }
