@@ -5,7 +5,7 @@ import Image from 'react-bootstrap/Image';
 import Tabs from 'react-bootstrap/Tabs';
 import Tab from 'react-bootstrap/Tab';
 import Categories from '../assets/inventory_category.json';
-import CustomCategories from '../assets/inventory_categoryCustom.json';
+import CustomCategories from '../assets/inventory_category_custom.json';
 import './InventoryList.css';
 import ShowHideIcon from '../assets/icons/ic-hide.png';
 
@@ -92,14 +92,9 @@ const InventoryList = props => {
   if (name === 'All') {
     items = Categories.reduce((prev, cur) => prev.concat(cur.items), []);
   }
-  console.log(props);
   return (
     <div className="inventory-list">
-      { items.map((item, index) => {
-        item.category = name;
-        return (<InventoryItem key={index} item={item}/>);
-      })
-      }
+      { items.map((item, index) => <InventoryItem key={index} item={{ ...item, category: name }} />) }
     </div>
   );
 }
@@ -139,10 +134,10 @@ const InventoryItemModel = props => {
   return (
     <Modal
       size="lg"
-      aria-labelledby="contained-modal-title-vcenter"
+      animation={false}
       show={props.show}
       onHide={props.onHide}
-      centered
+      centered={true}
     >
     <Modal.Header closeButton>
       <div className="modalImage" sm={5}>
@@ -156,7 +151,7 @@ const InventoryItemModel = props => {
       </div>
     </Modal.Header>
     <Modal.Body>
-      <Tabs defaultActiveKey="history">
+      <Tabs defaultActiveKey="history" transition={false}>
         <Tab eventKey="history" title="History">
           <div className="history-list">
 
@@ -197,25 +192,17 @@ const InventoryItemModel = props => {
               <ul>
                 {
                   Categories.map((cat, index) => {
-                    let {backgroundColor, color, name} = cat;
-                    let checkthis = name === category;
+                    let { backgroundColor, color, name } = cat;
                     return (
                       <li
-                        style={{backgroundColor, color}}
+                        key={index}
+                        style={{ backgroundColor, color }}
                         className="d-flex justify-content-between"
                       >
                         <span className="modalCategoryName">{name}</span>
-                        {
-                          checkthis
-                          ? 
-                          <span className="alittletotheleft">
-                            <input type="radio" name="modalCategoryPredefined" checked/>
-                          </span>
-                          : 
-                          <span className="alittletotheleft">
-                            <input type="radio" name="modalCategoryPredefined" />
-                          </span>
-                        }
+                        <span className="alittletotheleft">
+                          <input type="radio" name="modalCategoryPredefined" defaultChecked={name === category} />
+                        </span>
                       </li>
                     );
                   }
@@ -228,18 +215,20 @@ const InventoryItemModel = props => {
               <ul>
                 {
                   CustomCategories.map((category, index) => {
-                    let {backgroundColor, color, name} = category;
+                    let { backgroundColor, color, name } = category;
                     return (
                       <li
+                        key={index}
                         style={{backgroundColor, color}}
                         className="d-flex justify-content-between"
                       >
                         <span className="modalCategoryName">{name}</span>
-                        <span className="alittletotheleft"><input type="checkbox" name="modalCategoryCustom"/></span>
+                        <span className="alittletotheleft">
+                          <input type="checkbox" name="modalCategoryCustom"/>
+                        </span>
                       </li>
                     );
-                  }
-                  )
+                  })
                 }
                 <li
                   style={{backgroundColor: "#EFEFEF", color: "black"}}
@@ -251,10 +240,10 @@ const InventoryItemModel = props => {
           </div>
         </Tab>
         <Tab eventKey="surprise" title="Local Supplies" disabled>
-          
+          Coming soon...
         </Tab>
         <Tab eventKey="nutrition" title="Nutritions" disabled>
-          
+          Coming soon...
         </Tab>
       </Tabs>
     </Modal.Body>

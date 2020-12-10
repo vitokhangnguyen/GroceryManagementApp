@@ -178,7 +178,7 @@ const ReceiptItem = props => {
                     <span className="receipt-item-category-item vegetable">
                         Vegetable
                     </span>
-                    <img className="ml-3" src={EditIcon} alt="edit-category" />
+                    <img className="ml-3 edit-category-btn" src={EditIcon} alt="edit-category" />
                 </div>
             </div>
             <button
