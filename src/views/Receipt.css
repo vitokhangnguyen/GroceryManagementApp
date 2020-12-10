@@ -51,11 +51,12 @@
 
 .receipt-item {
     background-color: #FFFFFF;
-    border-radius: 12px;
+    border-radius: 20px;
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.25);
 
     display: grid;
     grid-template-columns: minmax(min-content, 10%) minmax(min-content, 95%) 5%;
+    overflow: hidden;
     margin-bottom: 2rem;
 }
 
@@ -91,6 +92,8 @@
 }
 
 .receipt-item-remove-btn {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     font-size: 4rem !important;
     overflow: hidden;
 }
@@ -99,4 +102,8 @@
     padding: 1.5rem 2rem;
     border: 3px dashed var(--theme-color);
     border-radius: 25px;
+}
+
+.edit-category-btn {
+    width: 1.75rem;
 }
