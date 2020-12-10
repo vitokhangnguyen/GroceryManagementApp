@@ -6,13 +6,18 @@ import './Receipt.css';
 import EditIcon from '../assets/icons/ic-edit.png';
 import BarcodeIcon from '../assets/icons/ic-barcode.png';
 import KeyboardIcon from '../assets/icons/ic-keyboard-sm.png';
+import WhiteCheckIcon from '../assets/icons/ic-white-check.png';
 import Stores from '../assets/store_location.json';
+import Brands from '../assets/brand.json';
 
 class Receipt extends React.Component {
-    state = {
-        selectedLocation: null,
-        receiptItems: [],
-    };
+    constructor(props) {
+        super(props);
+        this.state = {
+            selectedLocation: null,
+            receiptItems: [],
+        };
+    }
 
     componentDidMount() {
         this.setState(prevState => this.props.scanResult);
@@ -65,7 +70,7 @@ const SelectLocationPanel = props => {
 }
 
 const LocationPanel = props => {
-    let { logoFile, name, address1, address2 } = props.location;
+    let { logoFile, name, description, address1, address2 } = props.location;
     return (
         <div className="receipt-panel">
             <h2>Location</h2>
@@ -76,6 +81,7 @@ const LocationPanel = props => {
                 <div className="location-body">
                     <div className="location-info">
                         <h3 className="location-name">{ name }</h3>
+                        <p className="location-desc">{ description }</p>
                         <div className="location-address">
                             <p className="mb-0">{ address1 }</p>
                             <p className="mb-0">{ address2 }</p>
@@ -96,6 +102,15 @@ const LocationPanel = props => {
 }
 
 const ReceiptItemPanel = props => {
+    let onItemAddManually = () => {
+        props.onItemsChange([...props.items, {
+            editing: true,
+            name: "", imageFile: null,
+            brandName: "", brandLogoFile: null,
+            expiryDate: null, expiryDateFocused: false,
+            categories: [],
+        }]);
+    };
     let onItemChange = (newItem, index) => {
         props.items[index] = newItem;
         props.onItemsChange([...props.items]);
@@ -123,7 +138,7 @@ const ReceiptItemPanel = props => {
                             <p className="mb-0 mt-2">Scan Barcode</p>
                         </div>
                     </div>
-                    <div className="col-sm-6">
+                    <div className="col-sm-6" onClick={onItemAddManually}>
                         <div className="h-100 d-flex justify-content-center align-items-center flex-column">
                             <img alt="manual-input" src={KeyboardIcon} />
                             <p className="mb-0 mt-2">Add Manually</p>
@@ -141,31 +156,77 @@ const ReceiptItem = props => {
         item[name] = data;
         props.onItemChange(item);
     }
+    let onSave = () => {
+        let matchedBrand = Stores.concat(Brands).find((value, index) =>
+            value.title.toLowerCase().replace(/\s/, "") === item.brandName.toLowerCase().replace(/\s/, "")
+        );
+        item.brandLogoFile = matchedBrand?.logoFile;
+        item.editing = false;
+        item.imageFile = 'placeholder-image.png';
+        props.onItemChange(item);
+    }
     return (
         <div className="receipt-item">
-            <div className="receipt-item-image">
-                <img 
-                    src={require(`../assets/images/inventory/${item.imageFile}`).default}
-                    alt={item.imageFile}
-                />
-            </div>
+            {
+                item.imageFile ?
+                    <div className="receipt-item-image">
+                        <img 
+                            src={require(`../assets/images/inventory/${item.imageFile}`).default}
+                            alt={item.imageFile}
+                        />
+                    </div> :
+                    <div className="receipt-item-image p-2">
+                        <div className="receipt-item-image-placeholder">
+                            Image here
+                        </div>
+                    </div>
+            }
             <div className="receipt-item-body">
-                <h3 className="receipt-item-name mb-0">{ item.name }</h3>
-                <div className="receipt-item-brand">
-                    <img
-                        src={require(`../assets/images/logo/${item.brandLogoFile}`).default}
-                        alt={item.brandLogoFile}
-                    />
-                    { item.brandName }
-                </div>
+                {
+                    item.editing ?
+                        <div className="mb-2">
+                            <input
+                                className="d-inline-block form-control mr-1"
+                                value={item.name}
+                                onChange={e => onChange("name", e.target.value)}
+                                placeholder="Product name"
+                                style={{ maxWidth: '14.75rem' }}
+                            /> 
+                            &minus;
+                            <input
+                                className="d-inline-block form-control form-control-sm ml-1"
+                                value={item.brandName}
+                                onChange={e => onChange("brandName", e.target.value)}
+                                placeholder="Brand name"
+                                style={{ maxWidth: '10rem' }}
+                            />
+                        </div> :
+                        <h3 className="receipt-item-name mb-0">{ item.name }</h3>
+                }
+                {
+                    item.editing ?
+                        null :
+                        <div className="receipt-item-brand">
+                            {
+                            item.brandLogoFile ?
+                                <img
+                                    src={require(`../assets/images/logo/${item.brandLogoFile}`).default}
+                                    alt={item.brandLogoFile}
+                                /> : null
+                            }
+                            { item.brandName }
+                        </div>
+                }
                 <div className="receipt-item-expiry-date mb-2">
-                    <label className="mb-0 mr-2" for={`item-expiry-date-${props.index}`}>Expire on</label>
+                    <label className="mb-0 mr-2" htmlFor={`item-expiry-date-${props.index}`}>Expire on</label>
                     <SingleDatePicker
                         date={item.expiryDate}
                         onDateChange={date => onChange("expiryDate", date)}
                         focused={item.expiryDateFocused}
                         onFocusChange={({ focused }) => onChange("expiryDateFocused", focused)}
+                        withPortal={window.matchMedia("(max-width: 767px)").matches}
                         displayFormat="yyyy-MM-DD"
+                        numberOfMonths={1}
                         showDefaultInputIcon={true}
                         inputIconPosition="after"
                         openDirection="up"
@@ -175,18 +236,31 @@ const ReceiptItem = props => {
                 </div>
                 <div className="receipt-item-categories">
                     <span>Categories:</span>
-                    <span className="receipt-item-category-item vegetable">
-                        Vegetable
-                    </span>
+                    {
+                        item.categories.map((category, index) =>
+                            <span key={index} className="receipt-item-category-item" style={{ color: category.color, backgroundColor: category.backgroundColor }}>
+                                { category.name }
+                            </span>
+                        )
+                    }
                     <img className="ml-3 edit-category-btn" src={EditIcon} alt="edit-category" />
                 </div>
             </div>
-            <button
-                className="btn btn-default receipt-item-remove-btn"
-                onClick={props.onItemRemove}
-            >
-                &times;
-            </button>
+            {
+                item.editing ?
+                    <button
+                        className="btn btn-success receipt-item-remove-btn"
+                        onClick={onSave}
+                    >
+                        <img className="w-50" src={WhiteCheckIcon} alt="save-item" />
+                    </button> :                      
+                    <button
+                        className="btn btn-default receipt-item-remove-btn"
+                        onClick={props.onItemRemove}
+                    >
+                        &times;
+                    </button>
+            }
         </div>
     );
 }

@@ -129,7 +129,7 @@ const InventoryItemModel = props => {
   let { imageFile, name, qty, category } = props.item;
   let imageUrl = require(`../assets/images/inventory/${imageFile}`).default;
   let editIcon = require("../assets/icons/ic-edit.png").default;
-  let pcIcon = require("../assets/icons/ic-pc.jpg").default;
+  let pcIcon = require("../assets/images/logo/presidentschoice.jpg").default;
   let warningIcon = require("../assets/icons/ic-warning.png").default;
   return (
     <Modal

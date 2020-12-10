@@ -50,10 +50,15 @@ class App extends React.Component {
                         imageFile: "bulk_carrot.png",
                         brandName: "No Name",
                         brandLogoFile: "noname.png",
+                        categories: [{
+                          name: "Vegetable",
+                          color: "white",
+                          backgroundColor: "#77B255",
+                        }],
                         expiryDate: null,
                         expiryDateFocused: false,
                     }
-                ],
+                  ],
                 }} />
               </Route>
             </Switch>

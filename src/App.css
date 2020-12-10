@@ -29,8 +29,8 @@
     .right-bottom-border-sm {
         border-right: none !important;
         border-bottom: 1px solid var(--theme-color);
-        padding-bottom: 0.5em;
-        margin-bottom: 1rem;;
+        padding-bottom: 0.5rem;
+        margin-bottom: 0.5rem;;
     }
 }
 
@@ -42,7 +42,7 @@
     .right-bottom-border-md {
         border-right: none !important;
         border-bottom: 1px solid var(--theme-color);
-        padding-bottom: 0.5em;
+        padding-bottom: 0.5rem;
         margin-bottom: 1rem;;
     }
 }
