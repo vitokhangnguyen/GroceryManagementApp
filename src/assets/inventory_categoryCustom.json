@@ -1,0 +1,13 @@
+[
+    {
+        "name": "Breakfast",
+        "color": "white",
+        "backgroundColor": "#B65717"
+    },
+    {
+        "name": "Pizza",
+        "color": "white",
+        "backgroundColor": "#CE0000"
+    }
+
+]

@@ -167,3 +167,50 @@
 	color: var(--theme-color);
 }
 
+.warning {
+	color: red;
+	font-size: smaller;
+}
+
+#categoryLeft {
+	width: 50%;
+}
+#categoryRight {
+	width: 50%;
+}
+
+.modalCategoryName {
+	padding: 0.3em;
+}
+
+.alittletotheleft {
+	padding: 0.3em;
+}
+
+.categorySubTitle {
+	padding-top: 0.5em;
+	padding-left: 2.3em;
+}
+
+.history-item {
+	border-left: 4px solid;
+	border-top-left-radius: 2px;
+	border-bottom-left-radius: 2px;
+	background-color: #EFEFEF;
+	margin-bottom: 10px;
+}
+
+.history-list {
+	max-height: 200px;
+	overflow-y: scroll;
+	/* display: flex; */
+}
+
+.history-list ul {
+	width: 90%;
+	list-style: none;
+	display: inline-block;
+}
+.history-list p {
+	display: inline-block;
+}
