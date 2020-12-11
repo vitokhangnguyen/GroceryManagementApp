@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/GroceryManagementApp/static/css/main.0ae00ca4.chunk.css",
-    "main.js": "/GroceryManagementApp/static/js/main.ef9499f3.chunk.js",
-    "main.js.map": "/GroceryManagementApp/static/js/main.ef9499f3.chunk.js.map",
+    "main.css": "/GroceryManagementApp/static/css/main.bf08f9ba.chunk.css",
+    "main.js": "/GroceryManagementApp/static/js/main.be96237c.chunk.js",
+    "main.js.map": "/GroceryManagementApp/static/js/main.be96237c.chunk.js.map",
     "runtime-main.js": "/GroceryManagementApp/static/js/runtime-main.8a33f2a6.js",
     "runtime-main.js.map": "/GroceryManagementApp/static/js/runtime-main.8a33f2a6.js.map",
     "static/css/2.9e656a63.chunk.css": "/GroceryManagementApp/static/css/2.9e656a63.chunk.css",
-    "static/js/2.ebb812ed.chunk.js": "/GroceryManagementApp/static/js/2.ebb812ed.chunk.js",
-    "static/js/2.ebb812ed.chunk.js.map": "/GroceryManagementApp/static/js/2.ebb812ed.chunk.js.map",
+    "static/js/2.c3430db0.chunk.js": "/GroceryManagementApp/static/js/2.c3430db0.chunk.js",
+    "static/js/2.c3430db0.chunk.js.map": "/GroceryManagementApp/static/js/2.c3430db0.chunk.js.map",
     "index.html": "/GroceryManagementApp/index.html",
     "static/css/2.9e656a63.chunk.css.map": "/GroceryManagementApp/static/css/2.9e656a63.chunk.css.map",
-    "static/css/main.0ae00ca4.chunk.css.map": "/GroceryManagementApp/static/css/main.0ae00ca4.chunk.css.map",
-    "static/js/2.ebb812ed.chunk.js.LICENSE.txt": "/GroceryManagementApp/static/js/2.ebb812ed.chunk.js.LICENSE.txt",
+    "static/css/main.bf08f9ba.chunk.css.map": "/GroceryManagementApp/static/css/main.bf08f9ba.chunk.css.map",
+    "static/js/2.c3430db0.chunk.js.LICENSE.txt": "/GroceryManagementApp/static/js/2.c3430db0.chunk.js.LICENSE.txt",
     "static/media/agincourt_walmart.jpg": "/GroceryManagementApp/static/media/agincourt_walmart.7a705481.jpg",
     "static/media/bananas.png": "/GroceryManagementApp/static/media/bananas.d116efd4.png",
     "static/media/bulk_carrot.png": "/GroceryManagementApp/static/media/bulk_carrot.3faa4a44.png",
@@ -20,6 +20,7 @@
     "static/media/coke.png": "/GroceryManagementApp/static/media/coke.6cd22121.png",
     "static/media/corn.png": "/GroceryManagementApp/static/media/corn.76ed9459.png",
     "static/media/cremini_whole_mushroom.png": "/GroceryManagementApp/static/media/cremini_whole_mushroom.c416eb93.png",
+    "static/media/ic-collapsible.6e2e7032.jpg": "/GroceryManagementApp/static/media/ic-collapsible.6e2e7032.jpg",
     "static/media/ic-hide.3c87812f.png": "/GroceryManagementApp/static/media/ic-hide.3c87812f.png",
     "static/media/ic-logo-lg.db763a18.png": "/GroceryManagementApp/static/media/ic-logo-lg.db763a18.png",
     "static/media/ic-search.d9e42577.webp": "/GroceryManagementApp/static/media/ic-search.d9e42577.webp",
@@ -46,8 +47,8 @@
   "entrypoints": [
     "static/js/runtime-main.8a33f2a6.js",
     "static/css/2.9e656a63.chunk.css",
-    "static/js/2.ebb812ed.chunk.js",
-    "static/css/main.0ae00ca4.chunk.css",
-    "static/js/main.ef9499f3.chunk.js"
+    "static/js/2.c3430db0.chunk.js",
+    "static/css/main.bf08f9ba.chunk.css",
+    "static/js/main.be96237c.chunk.js"
   ]
 }
