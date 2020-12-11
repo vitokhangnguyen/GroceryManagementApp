@@ -1,0 +1,31 @@
+[
+    {
+        "title": "Your Milk is going to expire in 2 days",
+        "message1": "Last resupply on <strong>Sept. 30</strong>",
+        "color": "var(--theme-color)",
+        "item": {
+            "imageFile": "neilson_milk.png",
+            "brandName": "Neilson",
+            "brandLogoFile": "neilson.png"
+        }
+    },
+    {
+        "title": "Your Ketchup is running low",
+        "message1": "Last resupply on <strong>Jul. 11</strong>",
+        "message2": "Closest supply: <strong>Listo's No Frills</strong> (1.2 km away)",
+        "color": "#FFC107",
+        "item": {
+            "imageFile": "ketchup.png",
+            "brandName": "Heinz",
+            "brandLogoFile": "heinz.png"
+        }
+    },
+    {
+        "title": "You have a shopping list scheduled for today",
+        "message1": "Location <strong>Listo's NoFrills</strong> (1.2 km away)",
+        "color": "#0091FF",
+        "item": {
+            "brandLogoFile": "nofrills.jpg"
+        }
+    }
+]

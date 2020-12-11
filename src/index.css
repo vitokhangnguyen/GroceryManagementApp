@@ -28,3 +28,15 @@ main {
   margin-right: auto;
   padding: 0 1rem;
 }
+
+.input-group {
+  border-radius: 0.25rem;
+}
+
+.input-group:focus-within {
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25) !important;
+}
+
+.input-group input, .input-group button {
+  box-shadow: none !important;
+}

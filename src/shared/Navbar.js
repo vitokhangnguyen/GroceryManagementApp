@@ -7,7 +7,7 @@ import Logo from '../assets/icons/ic-logo-lg.png';
 
 export default class GMANavbar extends React.Component {
     get greetingStr() {
-        let currentHours = (new Date()).getHours() + 1; // Date.getHours() returns a number between 0-23
+        let currentHours = (new Date()).getHours();
         if (currentHours < 12) {
             return 'Good Morning';
         } else if (currentHours < 18) {

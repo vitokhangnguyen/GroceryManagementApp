@@ -1,3 +1,13 @@
+@media screen and (max-width: 767px) {
+    .location-item {
+        grid-template-columns: 0% 100% !important;
+    }
+
+    .receipt-item {
+        grid-template-columns: 0% 92% 10% !important;
+    }
+}
+
 .receipt-view {
     padding-bottom: var(--button-panel-height);
 }
@@ -8,7 +18,7 @@
 
 .receipt-panel h2 {
     color: var(--theme-color);
-    font-size: 20px;
+    font-size: 22px;
     font-weight: bold;
 }
 
@@ -20,7 +30,7 @@
     overflow: hidden;
 
     display: grid;
-    grid-template-columns: minmax(min-content, 10%) minmax(min-content, 90%);
+    grid-template-columns: 10% 90%;
 }
 
 .location-logo,
@@ -45,7 +55,7 @@
 .location-name,
 .receipt-item-name {
     color: var(--theme-color);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
 }
 
@@ -60,7 +70,7 @@
     box-shadow: 2px 2px 3px 0 rgba(0, 0, 0, 0.25);
 
     display: grid;
-    grid-template-columns: minmax(min-content, 10%) minmax(min-content, 95%) 5%;
+    grid-template-columns: 10% 85% 5%;
     margin-bottom: 2rem;
 }
 
@@ -69,6 +79,7 @@
 }
 
 .receipt-item-brand {
+    font-weight: normal;
     display: flex;
     align-items: center;
     margin-bottom: 0.5rem;
@@ -94,6 +105,7 @@
 
 .receipt-item-categories {
     display: flex;
+    flex-flow: row wrap;
     align-items: center;
 }
 

@@ -7,8 +7,8 @@ import EditIcon from '../assets/icons/ic-edit.png';
 import BarcodeIcon from '../assets/icons/ic-barcode.png';
 import KeyboardIcon from '../assets/icons/ic-keyboard-sm.png';
 import WhiteCheckIcon from '../assets/icons/ic-white-check.png';
-import Stores from '../assets/store_location.json';
-import Brands from '../assets/brand.json';
+import Stores from '../assets/data/store_location.json';
+import Brands from '../assets/data/brand.json';
 
 class Receipt extends React.Component {
     constructor(props) {
@@ -101,7 +101,10 @@ const LocationPanel = props => {
     );
 }
 
-const ReceiptItemPanel = props => {
+const ReceiptItemPanel = withRouter(props => {
+    let onItemAddByScan = () => {
+        props.history.push('/inventory/add/scanning');
+    }
     let onItemAddManually = () => {
         props.onItemsChange([...props.items, {
             editing: true,
@@ -132,7 +135,7 @@ const ReceiptItemPanel = props => {
             { ReceiptItems }
             <div className="add-receipt-item">
                 <div className="row h-100">
-                    <div className="col-sm-6 right-bottom-border-sm">
+                    <div className="col-sm-6 right-bottom-border-sm" onClick={onItemAddByScan}>
                         <div className="h-100 d-flex justify-content-center align-items-center flex-column">
                             <img alt="scan-receipt" src={BarcodeIcon} />
                             <p className="mb-0 mt-2">Scan Barcode</p>
@@ -148,7 +151,7 @@ const ReceiptItemPanel = props => {
             </div>
         </div>
     );
-}
+});
 
 const ReceiptItem = props => {
     let { item  } = props;

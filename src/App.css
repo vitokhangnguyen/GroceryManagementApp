@@ -1,3 +1,7 @@
+.btn {
+    color: rgb(135, 135, 135);
+}
+
 .btn-default {
     color: #FFFFFF;
     background-color: var(--theme-color);
@@ -30,7 +34,7 @@
         border-right: none !important;
         border-bottom: 1px solid var(--theme-color);
         padding-bottom: 0.5rem;
-        margin-bottom: 0.5rem;;
+        margin-bottom: 0.5rem;
     }
 }
 

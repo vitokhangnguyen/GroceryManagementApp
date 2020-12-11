@@ -76,7 +76,7 @@
         "items": [
             {
                 "name": "Milk",
-                "imageFile": "milk.png",
+                "imageFile": "neilson_milk.png",
                 "location": "Listo's NoFrill",
                 "qty": 1
             },

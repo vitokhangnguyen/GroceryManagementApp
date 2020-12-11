@@ -9,7 +9,7 @@ import Receipt from './views/Receipt';
 import 'bootstrap/dist/css/bootstrap.css';
 import 'react-dates/lib/css/_datepicker.css';
 import './App.css';
-import Stores from "./assets/store_location.json"
+import Stores from "./assets/data/store_location.json"
 
 class App extends React.Component {
   static mainExcludesPaddingOn = [
