@@ -9,6 +9,7 @@ import CustomCategories from '../assets/data/inventory_category_custom.json';
 import './InventoryList.css';
 import ShowHideIcon from '../assets/icons/ic-hide.png';
 import SearchIcon from '../assets/icons/ic-search.webp';
+import CollapsibleIcon from '../assets/icons/ic-collapsible.jpg';
 
 class InventoryPage extends Component {
     constructor(props) {
@@ -82,20 +83,46 @@ class InventoryPage extends Component {
 }
 
 const CategoriesPanel = props => {
+  let [ showCategory, setShowCategory ] = useState(true);
+  let [ showCustomCategory, setShowCustomCategory ] = useState(true);
   return (
     <div className={'category-sidebar ' + (props.hide ? "hidden" : "")}>
-      <ul>
-        {
-          Categories.map((category, index) =>
-            <CategoryItem
-              key={index}
-              isActive={category.name === props.currentCategory.name}
-              onCategoryItemSelect={() => props.onCategoryChange(category)}
-              category={category}
-            />
-          )
-        }
-      </ul>
+      <h3 className={showCategory ? "expanded" : "collapsed"} onClick={() => setShowCategory(prevState => !prevState)}>
+        <img src={CollapsibleIcon} alt="collapse-category" />
+        <span>Categories</span>
+      </h3>
+      <div className={`category-list-wrapper ${showCategory ? "expanded" : "collapsed"}`}>
+        <ul className="mb-4">
+          {
+            Categories.map((category, index) =>
+              <CategoryItem
+                key={index}
+                isActive={category.name === props.currentCategory.name}
+                onCategoryItemSelect={() => props.onCategoryChange(category)}
+                category={category}
+              />
+            )
+          }
+        </ul>
+      </div>
+      <h3 className={showCustomCategory ? "expanded" : "collapsed"} onClick={() => setShowCustomCategory(prevState => !prevState)}>
+        <img src={CollapsibleIcon} alt="collapse-category" />
+        <span className="text-center">Custom<br />Categories</span>
+      </h3>
+      <div className={`category-list-wrapper ${showCustomCategory ? "expanded" : "collapsed"}`}>
+        <ul>
+          {
+            CustomCategories.map((category, index) =>
+              <CategoryItem
+                key={index}
+                isActive={category.name === props.currentCategory.name}
+                onCategoryItemSelect={() => props.onCategoryChange(category)}
+                category={category}
+              />
+            )
+          }
+        </ul>
+      </div>
       <div
         onClick={props.onToggle}
         className={"sidebar-control " + (props.hide ? "hidden" : "")}
@@ -137,10 +164,16 @@ const InventoryList = props => {
   return (
     <div className="inventory-list">
       { 
-        items.map((item, index) =>
-          item.name.toLowerCase().includes(searchPattern) || 
-          item.location.toLowerCase().includes(searchPattern) ?
-            <InventoryItem key={index} item={{ ...item, category: category.name }} /> : null
+        items && items.length > 0 ?
+          items.map((item, index) =>
+            item.name.toLowerCase().includes(searchPattern) || 
+            item.location.toLowerCase().includes(searchPattern) ?
+              <InventoryItem key={index} item={{ ...item, category: category.name }} /> : null
+        ) :
+        (
+          searchPattern === '' ?
+            <p className="mt-2">There are no items in this category.</p> :
+            <p className="mt-2">There are no items in this category that match the search pattern.</p>
         )
       }
     </div>

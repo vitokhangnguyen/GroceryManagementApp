@@ -2,11 +2,20 @@
     {
         "name": "Breakfast",
         "color": "white",
-        "backgroundColor": "#B65717"
+        "backgroundColor": "#B65717",
+        "items": [
+            {
+                "name": "Milk",
+                "imageFile": "neilson_milk.png",
+                "location": "Listo's NoFrill",
+                "qty": 1
+            }
+        ]
     },
     {
-        "name": "Pizza",
+        "name": "Leftover",
         "color": "white",
-        "backgroundColor": "#CE0000"
+        "backgroundColor": "#CE0000",
+        "items": []
     }
 ]

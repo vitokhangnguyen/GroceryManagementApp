@@ -51,7 +51,7 @@ class Receipt extends React.Component {
                     <button className="back-btn w-50" onClick={() => this.props.history.goBack()}>
                         Back
                     </button>
-                    <button className="confirm-btn w-50" onClick={() => this.props.history.goBack()}>
+                    <button className="confirm-btn w-50" onClick={() => this.props.history.push('/')}>
                         Confirm
                     </button>
                 </div>
